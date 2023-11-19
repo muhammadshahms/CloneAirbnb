@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+type[input=text],type[input]{
+    @apply w-full;
+}
