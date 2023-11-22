@@ -12,7 +12,7 @@ const LoginPage = () => {
         <button className="primary">Login</button>
         <div className="text-center py-2 text-gray-500">
           
-           <Link to={'/register'}> Don't have an account?</Link>
+           <Link to={'/register'} className="underline"> Don't have an account?</Link>
         </div>
       </form>
     </div>
