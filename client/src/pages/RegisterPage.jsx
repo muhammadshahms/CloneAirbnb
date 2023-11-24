@@ -9,13 +9,12 @@ const RegisterPage = () => {
 
   function registerUser(e) {
     e.preventDefault();
-    axios.get('http://localhost:4000/test')
-      .then(response => {
-        console.log(response.data);
+    axios.post('/register',
+      {
+        name,
+        email,
+        password
       })
-      .catch(error => {
-        console.error(error);
-      });
   }
 
   return (
