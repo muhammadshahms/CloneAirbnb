@@ -3,8 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const UserModel = require('./models/User');
-require('dotenv').config(); 
-const bcrypt = require ('bcrypt');
+require('dotenv').config();
+const bcrypt = require('bcrypt');
 
 app.use(express.json());
 const bcryptSalt = bcrypt.genSaltSync(10)
@@ -22,11 +22,11 @@ app.get('/test', (req, res) => {
   res.json('test');
 });
 
-app.post('/register',async (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
-  const UserDoc =  await UserModel.create({ 
-    name, 
-    email, 
+  const UserDoc = await UserModel.create({
+    name,
+    email,
     password: bcrypt.hashSync(password, bcryptSalt)
   })
   res.json(UserDoc);
