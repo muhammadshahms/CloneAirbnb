@@ -7,7 +7,7 @@ require('dotenv').config();
 const bcrypt = require ('bcrypt');
 
 app.use(express.json());
-const bcryptSalt = bcrypt.genSalt(10)
+const bcryptSalt = bcrypt.genSaltSync(10)
 // ipaddress: 103.70.86.89/32
 // muhammadshah4589
 // LOS2r0cw3EPhr1fv
@@ -24,14 +24,13 @@ app.get('/test', (req, res) => {
 
 app.post('/register',async (req, res) => {
   const { name, email, password } = req.body;
-  const UserModel =  await UserModel.create({ 
+  const UserDoc =  await UserModel.create({ 
     name, 
     email, 
-    password
+    password: bcrypt.hashSync(password, bcryptSalt)
   })
-  res.json({ name, email, password });
-})
-
+  res.json(UserDoc);
+});
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
