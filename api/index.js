@@ -31,6 +31,13 @@ app.post('/register', async (req, res) => {
   })
   res.json(UserDoc);
 });
+
+
+app.post('/login', async (req, res) => {
+  const {email,password} = req.body;
+  const UserDoc = await UserModel.findOne({email});
+  UserDoc ? res.json(UserDoc) : res.status(400).json('wrong credentials');
+})
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
