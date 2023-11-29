@@ -1,10 +1,11 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import axios from "axios"
 
 const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [redirect, setRedirt] = useState(false)
   async function login(e) {
     e.preventDefault()
     try {
@@ -13,9 +14,14 @@ const LoginPage = () => {
         password
       })
       alert("login success")
+      setRedirt(true)
     } catch (err) {
       alert("login failed")
     }
+  }
+
+  if (redirect) {
+    return <Navigate to={'/'} />
   }
 
   return (
