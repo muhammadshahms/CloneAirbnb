@@ -14,7 +14,7 @@ const Header = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-8 h-8 -rotate-90"
+            className="text-primary w-8 h-8 -rotate-90"
           >
             <path
               strokeLinecap="round"
@@ -23,9 +23,9 @@ const Header = () => {
             />
           </svg>
 
-          <span className="font-bold text-xl">airbnb</span>
+          <span className="font-bold text-xl text-primary font-weight-bold">airbnb</span>
         </a>
-        <div className="flex items-center border border-gray-300 rounded-full py-2 px-4 gap-3 shadow-md shadow-gray-300">
+        <div className="flex items-center border border-gray-300 rounded-full py-2 px-4 gap-3 custom-hover-shadow">
           <div>Anywhere</div>
           <div className="border-l border-gray-300"></div>
           <div>Any week</div>
@@ -49,7 +49,7 @@ const Header = () => {
           </button>
         </div>
         <Link to={user?'/account':"/login"}
-          className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-2 shadow-md shadow-gray-300"
+          className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-2 custom-hover-shadow"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Header = () => {
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
-          <div className="bg-gray-500 text-white rounded-full border border-gray-500 overflow-hidden  ">
+          <div className="bg-gray-500 text-white rounded-full border border-gray-500 overflow-hidden ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -80,8 +80,8 @@ const Header = () => {
             </svg>
           </div>
           {!!user && (
-            <div>
-              {user.name}
+            <div className="text-sm">
+              <p>{user.name}</p>
             </div>
             
           )}

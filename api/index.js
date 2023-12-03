@@ -77,6 +77,10 @@ app.get('/profile', async (req, res) => {
   }
 })
 
+app.get('/logout', (req, res) => {
+  res.cookie('token', '').json(true)
+})
+
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
