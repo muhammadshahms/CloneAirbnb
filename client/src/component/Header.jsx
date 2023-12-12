@@ -27,10 +27,12 @@ const Header = () => {
         </a>
         <div className="flex items-center border border-gray-300 rounded-full py-2 px-4 gap-3 custom-hover-shadow">
           <div>Anywhere</div>
-          <div className="border-l border-gray-300"></div>
-          <div>Any week</div>
-          <div className="border-l border-gray-300"></div>
-          <div>Add guests</div>
+          <div className="border-l border-gray-300 px-2">
+          <div>Any&nbsp;week</div>
+          </div>
+          <div className="border-l border-gray-300 px-2">
+          <div>Add&nbsp;guests</div>
+          </div>
           <button className="bg-primary rounded-full p-1.5 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
